@@ -32,13 +32,14 @@ jobs:
             --project "bitcoin" \
             --nvdDatafeed 'https://open-vulnerability-data-mirror-production.up.railway.app/nvdcve-{0}.json.gz' \
             --out . \
-            --scan . \
+            --scan . \s
             --disableOssIndex \
-            —disableCentral
+            -—disableCentral
 
       - name: Archive SAST report
         uses: actions/upload-artifact@v4
         with:
           name: sast-report
           path: ./dependency-check-report.html
+
 
